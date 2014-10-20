@@ -274,7 +274,7 @@ def get_courses_with_details(request):
     return JSONResponse(serializer.data)
 
 @check_key
-def get_courses_with_components(request):
+def get_course_components(request):
     if not validate_course_search_params(request.GET):
         return PARAM_FAIL()
     courses = filter_courses(request.GET)

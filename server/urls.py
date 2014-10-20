@@ -33,7 +33,7 @@ urlpatterns = patterns('',
     url(r'^rooms/details/?$', get_rooms_with_details),
     url(r'^courses/?$', get_courses),
     url(r'^courses/details/?$', get_courses_with_details),
-    url(r'^courses/components/?$', get_courses_with_components),
+    url(r'^courses/components/?$', get_course_components),
 
 
 
