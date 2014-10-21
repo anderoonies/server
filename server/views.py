@@ -273,6 +273,15 @@ def get_courses_with_details(request):
     serializer = CourseSerializer(courses.order_by('catalog_num'), many=True)
     return JSONResponse(serializer.data)
 
+@check_key
+def get_course_components(request):
+    if not validate_course_search_params(request.GET):
+        return PARAM_FAIL()
+    courses = filter_courses(request.GET)
+    serializer = CourseComponentSerializer(courses.order_by('catalog_num'), 
+                                         many=True)
+    return JSONResponse(serializer.data)
+
 
 
 # Buildings and rooms
