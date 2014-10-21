@@ -112,7 +112,7 @@ class CourseComponent(models.Model):
     start_time = models.TimeField(null=True)
     end_time = models.TimeField(null=True)
     section = models.CharField(max_length=6)
-    room = models.CharField(max_length=50, null=True)
+    room = models.ForeignKey('Room', null=True)
 
 class ScrapeRecord(models.Model):
     date = models.DateTimeField(auto_now=True)
