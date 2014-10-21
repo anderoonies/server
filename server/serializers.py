@@ -45,6 +45,7 @@ class CourseDescSerializer(serializers.ModelSerializer):
 class CourseComponentSerializer(serializers.ModelSerializer):
     start_time = serializers.TimeField(source='start_time', format='%H:%M')
     end_time = serializers.TimeField(source='end_time', format='%H:%M')
+    room = serializers.SlugRelatedField(source='room', read_only=True, slug_field='full_name')
 
     class Meta:
         model = CourseComponent
